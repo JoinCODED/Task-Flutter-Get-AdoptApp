@@ -1,33 +1,53 @@
-# TASK-NAME
-
-This is the template for tasks. These repos are the starting points and instructions for students to explore a concept.
+# Pets Adoption App 🦄
 
 ## Instructions
-- Fork and clone [this repository](https://github.com/JoinCODED/{REPO_NAME}) to your `Development` folder.
 
-## Objective and end result
-- Write the objective of the task.
-- If there are any images, make sure you resize them to around 880px maximum width. **Don't add big images**
+- Fork and clone [this repository](https://github.com/JoinCODED/Task-Flutter-CRUD-AdoptApp) to your `Development` folder.
+- Endpoints:
 
-![screenshot](https://tenor.com/xNjE.gif)
+```
+Get pets, type: Get, http://http://10.0.2.2:5000/pets
+Create a new pet, type: Post, http://http://10.0.2.2:5000/pets
+Update a pet, type: Put, http://http://10.0.2.2:5000/pets/{petId}
+Delete a pet, type: Delete, http://http://10.0.2.2:5000/pets/{petId}
+Adopt a pet, type: Post, http://http://10.0.2.2:5000/pets/adopt/{petId}
+```
 
+### Part 1: Get Data
 
-### 🍋 The basic challenge title
+1. Install `dio` into your project:
 
-- Step 1
-- Step 2
-- Step 3
+```shell
+flutter pub add dio
+```
 
+2. Create a folder named `services`, inside it create a file called `pets.dart`.
+3. Import `dio` package in `pets.dart`.
 
-### 🤼‍♂️ The hard challenge title
+```dart
+import "package:dio/dio.dart";
+```
 
-- Step 1
-- Step 2
-- Step 3
+4. Create a new `DioClient` class and initialize a new dio instance.
+5. Define your `_baseUrl`.
+6. Create your first request that return a future list of pets and name it `getPets`.
+7. Our endpoint is:
 
+```
+Get, http://http://10.0.2.2:5000/pets
+```
 
-### 🌶 The Extreme challenge title 
+8. Store the response of the request in a `Response` object.
+9. Map your response to `Pet` objects using the `Pet.fromJson` constructor.
+10. Don't forget to convert the result to a `List`.
+11. Return your new `List` of `Pet`s.
+12. Don't forget to wrap your request in a `try-catch` block.
 
-- Step 1
-- Step 2
-- Step 3
+13. In your `PetsProvider`, create a new function that returns a future void.
+14. Import `services/pets.dart` file, and call `DioClient().getPets()` function, don't forget to `await`.
+15. Lastly assign the result of `DioClient().getPets()` to the `pets` variable in the provider.
+
+16. Back to `pages/home_page.dart`, wrap your `Consumer` widget with a `FutureBuilder` widget.
+17. Assign the `future` property to the `getPets` function we created in our provider.
+18. And in your `builder` property, return the `Consumer` widget.
+19. Use the `dataSnapshot` argument to check if the data is still loading, and in this case, return a spinner. Or if there's an error, show the error in a `Text` widget.
