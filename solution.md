@@ -13,10 +13,10 @@ flutter pub add dio
 import "package:dio/dio.dart";
 ```
 
-4. Create a new `DioClient` class and initialize a new dio instance.
+4. Create a new `PetsServices` class and initialize a new dio instance.
 
 ```dart
-class DioClient {
+class PetsServices {
   final Dio _dio = Dio();
 }
 ```
@@ -24,10 +24,10 @@ class DioClient {
 5. Define your `_baseUrl`.
 
 ```dart
-class DioClient {
+class PetsServices {
   final Dio _dio = Dio();
 
-  final _baseUrl = 'http://10.0.2.2:5000';
+  final _baseUrl = 'https://coded-pets-api-crud.herokuapp.com';
 }
 ```
 
@@ -40,7 +40,7 @@ class DioClient {
 - Our endpoint is:
 
 ```
-Get, http://http://10.0.2.2:5000/pets
+Get, https://coded-pets-api-crud.herokuapp.com/pets
 ```
 
 7. Store the response of the request in a `Response` object.
@@ -94,19 +94,19 @@ Get, http://http://10.0.2.2:5000/pets
   Future<void> getPets() async {}
 ```
 
-12. Import `services/pets.dart` file, and call `DioClient().getPets()` function, don't forget to `await`.
+12. Import `services/pets.dart` file, and call `PetsServices().getPets()` function, don't forget to `await`.
 
 ```dart
   Future<void> getPets() async {
-    await DioClient().getPets();
+    await PetsServices().getPets();
   }
 ```
 
-13. Lastly assign the result of `DioClient().getPets()` to the `pets` variable in the provider.
+13. Lastly assign the result of `PetsServices().getPets()` to the `pets` variable in the provider.
 
 ```dart
   Future<void> getPets() async {
-    pets = await DioClient().getPets();
+    pets = await PetsServices().getPets();
   }
 ```
 
@@ -147,5 +147,6 @@ FutureBuilder(
                       child: Text('An error occurred'),
                     );
                   } else {
-                    return Consumer[...]
+                    return Consumer
+                    [...]
 ```
