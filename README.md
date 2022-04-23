@@ -1,6 +1,6 @@
 # Pets Adoption App 🦄
 
-## Instructions
+## 🍋 Instructions
 
 - Fork and clone [this repository](https://github.com/JoinCODED/Task-Flutter-CRUD-AdoptApp) to your `Development` folder.
 - Endpoints:
