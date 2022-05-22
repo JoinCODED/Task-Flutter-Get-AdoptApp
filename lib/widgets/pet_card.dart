@@ -30,27 +30,16 @@ class PetCard extends StatelessWidget {
                   Text("Age: ${pet.age}"),
                   Text("Gender: ${pet.gender}"),
                   ElevatedButton(
-                    onPressed: pet.adopted
-                        ? null
-                        : () {
-                            Provider.of<PetsProvider>(context, listen: false)
-                                .adoptPet(pet.id!);
-                          },
+                    onPressed: () {},
                     child: const Text("Adopt"),
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       IconButton(
-                          onPressed: () {
-                            GoRouter.of(context).push('/update/${pet.id}');
-                          },
-                          icon: const Icon(Icons.edit)),
+                          onPressed: () {}, icon: const Icon(Icons.edit)),
                       IconButton(
-                          onPressed: () {
-                            Provider.of<PetsProvider>(context, listen: false)
-                                .deletePet(pet.id!);
-                          },
+                          onPressed: () {},
                           icon: const Icon(
                             Icons.delete,
                             color: Colors.red,
