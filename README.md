@@ -16,7 +16,9 @@ Adopt a pet, type: Post, https://coded-pets-api-crud.herokuapp.com/pets/adopt/{p
 ```
 
 
-1. In your `pages/home_page.dart`, wrap your `Consumer` widget with a `FutureBuilder` widget.
-2. Assign the `future` property to the `getPets` function we created in our provider.
-3. And in your `builder` property, return the `Consumer` widget.
-4. Use the `dataSnapshot` argument to check if the data is still loading, and in this case, return a spinner. Or if there's an error, show the error in a `Text` widget.
+1. In your `pages/home_page.dart`, wrap your List with a `Consumer` widget 
+2. Replace the provider calls in the code 
+3. Then wrap the consumer with a `FutureBuilder` widget.
+4. Assign the `future` property to the `getPets` function we created in our provider.
+5. And in your `builder` property, return the `Consumer` widget.
+6. Use the `dataSnapshot` argument to check if the data is still loading, and in this case, return a spinner. Or if there's an error, show the error in a `Text` widget.
