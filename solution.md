@@ -1,4 +1,13 @@
-1.  Back to `pages/home_page.dart`, wrap your `Consumer` widget with a `FutureBuilder` widget.
+1. Back to `pages/home_page.dart`, wrap your grid view with a `Consumer` widget.
+
+```dart
+Consumer<PetsProvider>(
+  builder: (context, petsProvider, child) =>
+  GridView.builder(
+    [...]
+```
+
+2. Wrap your `Consumer` widget with a `FutureBuilder` widget.
 
 ```dart
 FutureBuilder()
