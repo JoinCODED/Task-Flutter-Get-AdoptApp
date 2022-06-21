@@ -1,3 +1,8 @@
+import 'package:json_annotation/json_annotation.dart';
+
+part 'pet.g.dart';
+
+@JsonSerializable()
 class Pet {
   int? id;
   String name;
@@ -14,5 +19,6 @@ class Pet {
       required this.age,
       required this.gender});
 
-  
+  factory Pet.fromJson(Map<String, dynamic> json) => _$PetFromJson(json);
+  Map<String, dynamic> toJson() => _$PetToJson(this);
 }
