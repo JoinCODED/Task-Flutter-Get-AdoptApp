@@ -15,8 +15,6 @@ Delete a pet, type: Delete, https://coded-pets-api-crud.herokuapp.com/pets/{petI
 Adopt a pet, type: Post, https://coded-pets-api-crud.herokuapp.com/pets/adopt/{petId}
 ```
 
-1. In your `pages/home_page.dart`, Wrap your grid view builder with a `Consumer` widget.
-2. Wrap your `Consumer` widget with a `FutureBuilder` widget.
-3. Assign the `future` property to the `getPets` function we created in our provider.
-4. And in your `builder` property, return the `Consumer` widget.
-5. Use the `dataSnapshot` argument to check if the data is still loading, and in this case, return a spinner. Or if there's an error, show the error in a `Text` widget.
+1. In your `pages/home_page.dart`, Wrap your grid view builder with a `FutureBuilder` widget.
+2. Assign the `future` property to the `getPets` function we created in our provider.
+3. Use the `dataSnapshot` argument to check if the data is still loading, and in this case, return a spinner. Or if there's an error, show the error in a `Text` widget.
