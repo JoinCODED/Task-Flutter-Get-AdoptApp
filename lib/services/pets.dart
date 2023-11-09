@@ -8,7 +8,7 @@ class DioClient {
   Future<List<Pet>> getPets() async {
     List<Pet> pets = [];
     try {
-      Response response =  await _dio.get("https://coded-pets-api-crud.herokuapp.com/pets");
+      Response response =  await _dio.get("https://coded-pets-api-crud.eapi.joincoded.com/");
       pets = (response.data as List).map((pet) => Pet.fromJson(pet)).toList();
     } on DioError catch (error) {
       print(error);
